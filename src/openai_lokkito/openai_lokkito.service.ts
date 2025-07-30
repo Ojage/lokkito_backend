@@ -11,8 +11,7 @@ export class OpenaiService {
   constructor(private readonly configService: ConfigService) {
     // Get configuration values using ConfigService
     const apiKey = this.configService.get<string>('OPENAI_API_KEY');
-    const modelId =
-      this.configService.get<string>('OPENAI_MODEL_ID');
+    const modelId = this.configService.get<string>('OPENAI_MODEL_ID');
 
     if (!apiKey) {
       throw new Error('OPENAI_API_KEY environment variable is required');
